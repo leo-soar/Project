@@ -14,18 +14,18 @@ git是一个开源的分布式版本控制系统,用于高效的管理各种大�
 
 #### 集中式  
  优点: 工作简单 方便代码保密  
- 缺点: 过于依赖中央处理单元 客户端之间不能交互 
-![集中式](./img/1.jpg)
+ 缺点: 过于依赖中央处理单元 客户端之间不能交互  
+![集中式](./img/1.jpg)  
 #### 分布式
 1. 开源思想 不保密
 2. 每一个节点都类似中央处理单元 可以共享
 3. 节点间互相传输数据 可以主动推送 也可以让别人获取
 优点: 自由高效 不用担心个别节点出问题  比svn传输速度快
-缺点: 工作方法多 操作复杂
-![分布式](./img/2.jpg)
+缺点: 工作方法多 操作复杂  
+![分布式](./img/2.jpg)  
 # ***git 使用***
-![使用流程](./img/git.jpeg)
-![分布式](./img/git.png)
+![使用流程](./img/git.jpeg)  
+![分布式](./img/git.png)  
 ## 安装
 `sudo apt-get install git`
 
@@ -44,8 +44,8 @@ git是一个开源的分布式版本控制系统,用于高效的管理各种大�
 ### 初始配置
 用户名  `git config --global user.name xxx`
 
-邮箱  `git config --global user.email xxx@xxx.xx`
-![](./img/3.jpg)
+邮箱  `git config --global user.email xxx@xxx.xx`  
+![](./img/3.jpg)  
 
 配置文件位置: ~/.gitconfig
 
@@ -58,9 +58,9 @@ git是一个开源的分布式版本控制系统,用于高效的管理各种大�
 初始化后 会产生隐藏文件.git
 删除 .git  就取消git目录了
 ### 查看仓库状态
-`git status`
+`git status`  
 
-![查看工作仓库状态](./img/4.jpg)  
+![查看工作仓库状态](./img/4.jpg)    
 默认 位于分支 master
 ### 将工作内容记录到暂存区
 `git add .`为所有文件  
@@ -70,12 +70,12 @@ git是一个开源的分布式版本控制系统,用于高效的管理各种大�
 `git commit xx.txt -m '本次同步说明'` 指定文件同步
 `git commit -m '说明'` 所有文件同步
 ### 查看操作记录
-`git log`  
-![查看记录](./img/5.jpg)  
+`git log`    
+![查看记录](./img/5.jpg)    
 commit编码 使用前7位
 `git log --pretty=oneline` 一行显示记录  
 q 退出  
-![查看记录](./img/6.jpg)
+![查看记录](./img/6.jpg)  
 ### 从仓库区恢复文件到工作区
 `git checkout -- 文件名` '--'两边有空格
 ### 删除仓库区文件
@@ -99,7 +99,7 @@ q 退出
 `git reset --hard 7位commit_id`   
 工作区与仓库区保持一致
 ## 查看所有操作
-`git reflog`  
+`git reflog`    
 ![查看所有记录](./img/7.jpg)  
 再通过commit_id 回退到需要的版本  
 
@@ -112,8 +112,8 @@ q 退出
 `git tag`  
 显示 标签名  
 `git show 标签名(v1.0)`  
-显示详细信息  
-![查看标签详细信息](./img/8.jpg)
+显示详细信息    
+![查看标签详细信息](./img/8.jpg)  
 ## 回退到指定标签
 `git reset --hard v0.9` 利用标签名  
 ## 删除标签
@@ -123,8 +123,8 @@ q 退出
 修改文件后,等待测试,不想提交到仓库的情况**可以保存工作区**    
 `git stash save '这是第一种方案'` 工作区会恢复到干净状态
 ## 查看工作区方案
-`git stash list`  
-![工作区方案](./img/9.jpg)
+`git stash list`    
+![工作区方案](./img/9.jpg)  
 ## 应用工作区方案
 `git stash apply stash@{1}`
 输入前面的序号来选择  
@@ -136,13 +136,13 @@ q 退出
 `git stash clear` 删除全部工作区方案
 
 # 分支管理
-定义:每个人在原有代码(分支)的基础上简历自己的工作环境,单独开发,互不干扰.完成开发工作后再进行分支统一合并.
-![](../img/10.jpg)
-## 创建分支
+定义:每个人在原有代码(分支)的基础上简历自己的工作环境,单独开发,互不干扰.完成开发工作后再进行分支统一合并.  
+![](./img/10.jpg)  
+## 创建分支  
 `git branch Tom_dev`
 ## 查看分支
 `git branch`  
-![](../img/11.jpg) *绿色字体表示当前工作分支  
+![](./img/11.jpg) *绿色字体表示当前工作分支  
 ## 切换分支
 `git checkout Tom_dev`
 ## 新建分支并切换到该分支
@@ -155,41 +155,41 @@ q 退出
 ## 分支合并的冲突问题
 原master 已经合并过其他分支后 再进行合并分支操作时会产生冲突 因为原master已经发生变化
 `git merge Tom_dev` 这时再合并Tom分支时  
-![分支冲突](../img/12.jpg)  
+![分支冲突](./img/12.jpg)  
 此时 master状态只是增加了文件 这种冲突好解决
 **只需要写入 ctrl+o 再离开 ctrl+x**  
 ===========
 如果 master状态是文件内容的修改 在其他分支上同一文件内容也进行了修改 这种冲突不好解决
-![分支冲突](../img/13.jpg)  
-必须手动修改  
-![分支冲突](../img/14.jpg)
+![分支冲突](./img/13.jpg)   
+必须手动修改    
+![分支冲突](./img/14.jpg)  
 **此时打开该文件 会发生双方修改内容都储存在文件中**  
 **注意: 在工作中尽量不要修改原文件 添加自己的文件和模块进行操作**
 
 ------------------------------------
 # 远程仓库操作命令(GitHub为例)
-github:一个开源的项目社区网站,拥有全球最多的开源项目.开发者可以注册网站在GitHub简历自己的项目仓库.  
-[网址:GitHub](http://github.com)
+github:一个开源的项目社区网站,拥有全球最多的开源项目.开发者可以注册网站在GitHub简历自己的项目仓库.    
+[网址:GitHub](http://github.com)  
 
 # 获取项目
-* 左上角搜索栏搜索想要获取的项目
-![github搜索](../img/15.jpg)
+* 左上角搜索栏搜索想要获取的项目  
+![github搜索](./img/15.jpg)  
 * 选择项目后复制项目git地址  
-![github搜索](../img/16.jpg) **http地址每次都要输入用户名密码**  
-![github搜索](../img/17.jpg)  **ssh地址信任计算机添加免密**  
-* 在本地使用git clone方法获取
+![github搜索](./img/16.jpg)  **http地址每次都要输入用户名密码**    
+![github搜索](./img/17.jpg)  **ssh地址信任计算机添加免密**   
+* 在本地使用git clone方法获取  
 `git clone http://github.com/xxxxxx`  
 **注意： 获取到本地的项目会自动和github远程仓库建立连接。且获取的项目本身也是个git项目。**   
-`git pull` 就会同步更新 
+`git pull` 就会同步更新   
 ## 创建git仓库
-* 点击右上角加号下拉菜单，选择新的仓库
-![创建仓库](../img/22.jpg)  
-![创建仓库](../img/23.jpg)
+* 点击右上角加号下拉菜单，选择新的仓库  
+![创建仓库](./img/22.jpg)    
+![创建仓库](./img/23.jpg)  
 
 
-* 创建后获取地址信息  
-![获取地址](../img/25.jpg)  
-![配置信任](../img/26.jpg)  
+* 创建后获取地址信息    
+![获取地址](./img/25.jpg)    
+![配置信任](./img/26.jpg)    
 ## 建立连接
 `git remote add origin git@gitbub.com:lvze0321/Project.git`  
 `git remote` 查看远程仓库  
@@ -204,7 +204,7 @@ github:一个开源的项目社区网站,拥有全球最多的开源项目.开�
 `git push -u orgin Tom_dev`切换分支后 该分支第一个推送 加-u  
 `git push origin --tags` 推送本地所有标签到远程  
 ## 删除远程标签
-`git push origin --delete tag v1.0`  
+`git push origin --delete tag v1.0`    
 ## 删除远程分支
 `git push origin :Tom_dev`
 ## 强行推送旧版本
@@ -217,22 +217,22 @@ github:一个开源的项目社区网站,拥有全球最多的开源项目.开�
 
 ## 删除仓库
 进入该仓库  
-![删除仓库](../img/18.jpg) 点击settings  
-拉到最下边 
+![删除仓库](./img/18.jpg) 点击settings  
+拉到最下边   
 
  
-![删除仓库](../img/19.jpg) 点击Delete...  
-输入该仓库名称  删除成功
+![删除仓库](./img/19.jpg) 点击Delete...  
+输入该仓库名称  删除成功  
 
 
 # 配置信任主机
-![配置信任](../img/20.jpg)
-![配置信任](../img/21.jpg)  
-SSH keys输入本机系统公钥  
+![配置信任](./img/20.jpg)  
+![配置信任](./img/21.jpg)    
+SSH keys输入本机系统公钥   
 
 **查看系统公钥**  
-`ssh -keygen` 生成密钥对  
-`cd .ssh`   id_rsa为私钥
+`ssh -keygen` 生成密钥对    
+`cd .ssh`   id_rsa为私钥  
 `cat id_rsa.pub`  
 
 
