@@ -235,4 +235,12 @@ SSH keys输入本机系统公钥
 `cd .ssh`   id_rsa为私钥  
 `cat id_rsa.pub`  
 
+#导入别人的GitHub仓库
+ '+' import repository  
+![导入别人的仓库](./img/27.jpg)  
+输入 地址 和名字 即可
+
+##常用命令
+![常用命令](./img/28.jpg)
+ 
 
